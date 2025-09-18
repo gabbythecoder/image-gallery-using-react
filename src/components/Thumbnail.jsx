@@ -1,7 +1,9 @@
-export default function Thumbnail() {
+export default function Thumbnail( { src, alt, onClick}) {
     return (
-        <section>
-            
-        </section>
+        <>
+            <button onClick={onClick} className="thumbnail">
+                <img src={src} alt={alt}/>
+            </button>
+        </>
     )
 }
