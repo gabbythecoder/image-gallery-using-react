@@ -1,13 +1,12 @@
-//!!!! split your code into components
-
-//-start with your wireframe: you build your React client based on the UI 
-
 import "./App.css";
 import { useState, useEffect } from "react";
+import ThumbnailImages from "./components/ThumbnailImages.jsx";
+import LargeImage from "./components/LargeImage.jsx";
 
 export default function App() {
 
   const [images, setImages] = useState([]);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
   useEffect(() => {
     async function getImages() {
@@ -19,25 +18,26 @@ export default function App() {
   }, []);
   console.log(images); //testing to see if it logs on console 
 
-
-  //state
-  //- state to store API image data
-  //- state to store the index value (navigate between images)
-
-  //effect
-  //- fetch data from an API
-  //- once the data is fetched, update the image data state to store the fetched data
-
-  //function to control what index we are currently clicking on 
-  //the index represents a specific image object in the array 
-
-  // function handleSwitchImage(index) {
-  //   setIndex(index)
-  // }
+  function handleSwitchImage(index) {
+    setSelectedImageIndex(index);
+  } 
 
   return (
     <>
       <h1>Gallery</h1>
+      <section>
+        <ThumbnailImages images={images} onSelectImage={handleSwitchImage}/>
+      </section>
+
+      {selectedImageIndex !== null && (
+        <LargeImage 
+            src={images[selectedImageIndex].url}
+            alt={images[selectedImageIndex].alt}
+            title={images[selectedImageIndex].title}
+            
+          />
+      )}
+
     </>
   )
 }
