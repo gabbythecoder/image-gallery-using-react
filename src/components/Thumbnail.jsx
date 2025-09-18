@@ -1,4 +1,4 @@
-export default function Thumbnail( { src, alt, onClick}) {
+export default function Thumbnail({ src, alt, onClick }) {
     return (
         <>
             <button onClick={onClick} className="thumbnail">
