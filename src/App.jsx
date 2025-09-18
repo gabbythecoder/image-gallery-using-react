@@ -3,8 +3,23 @@
 //-start with your wireframe: you build your React client based on the UI 
 
 import "./App.css";
+import { useState, useEffect } from "react";
 
 export default function App() {
+
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    async function getImages() {
+      const response = await fetch(import.meta.env.VITE_IMAGE_API);
+      const data = await response.json();
+      setImages(data);
+  }
+    getImages();
+  }, []);
+  console.log(images); //testing to see if it logs on console 
+
+
   //state
   //- state to store API image data
   //- state to store the index value (navigate between images)
