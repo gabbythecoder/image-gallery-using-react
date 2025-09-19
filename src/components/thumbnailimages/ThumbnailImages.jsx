@@ -7,7 +7,7 @@ export default function ThumbnailImages({ images, onSelectImage }) {
   }
 
   return (
-    <div className="thumbnail-container">
+    <div className="thumbnail-container" tabIndex="0">
       {images.map((image, index) => (
         <Thumbnail
           key={image.id}
