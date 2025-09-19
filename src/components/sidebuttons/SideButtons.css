@@ -22,6 +22,7 @@
     font-size: 1.8rem;
     color: #4F577A;
     transition: color 0.2s ease;
+
 }
 
 .side-buttons button:hover {
@@ -36,4 +37,24 @@
 .side-buttons button:disabled {
     cursor: not-allowed;
     color: #7681B3;
+}
+
+@media (max-width: 1215px) {
+    .side-buttons button {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        color: #eee;
+    }
+}
+
+@media (max-width: 600px) {
+    .side-buttons button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .side-buttons button {
+        font-size: 0.9rem;
+    }
 }
