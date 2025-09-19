@@ -14,7 +14,7 @@ export default function SearchBar({ query, setQuery }) {
     }
 
     return (
-        <div>
+        <div className="search-bar-container">
             <form onSubmit={handleSubmit} className="search-bar">
             <input 
                 type="text"
@@ -23,6 +23,7 @@ export default function SearchBar({ query, setQuery }) {
                 placeholder= "Search for photos..."
                 className="input-box"
                 />
+                <button onSubmit={handleSubmit} className="submit-button">Submit</button>
             </form>
         </div>
     )
