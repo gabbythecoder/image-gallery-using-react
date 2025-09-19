@@ -1,0 +1,17 @@
+.header {
+    margin-bottom: 1rem;
+    background-color: #6F73D2;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.main-title {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2.5rem;
+    color: #000;
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+}
