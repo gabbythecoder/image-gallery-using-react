@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ThumbnailImages from "./components/thumbnailimages/ThumbnailImages.jsx";
 import LargeImage from "./components/largeimage/LargeImage.jsx";
 import SearchBar from "./components/searchbar/SearchBar.jsx";
+import SideButtons from "./components/sidebuttons/SideButtons.jsx";
 
 export default function App() {
   const [images, setImages] = useState([]);
@@ -27,7 +28,22 @@ export default function App() {
     }
     getImages();
   }, [query]);
-  console.log(images); //testing to see if it logs on console
+  //testing to see if it logs on console
+  // console.log(images); 
+
+  //keyboard navigation for side buttons
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === "ArrowLeft" && selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    } else if (event.key === "ArrowRight" && selectedImageIndex < images.length -1) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  }
+
+  window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImageIndex, images.length]);
 
   function handleSwitchImage(index) {
     setSelectedImageIndex(index);
@@ -37,19 +53,34 @@ export default function App() {
     <>
       <h1 className="main-title">Gallery</h1>
 
-      <SearchBar query={query} setQuery={setQuery} />
+      <section>
+        <SearchBar query={query} setQuery={setQuery} />
+      </section>
 
       <section>
         <ThumbnailImages images={images} onSelectImage={handleSwitchImage} />
       </section>
 
       <section>
+
         {selectedImageIndex !== null && (
+          <div className="image-button-container">
+        <SideButtons 
+                selectedImageIndex={selectedImageIndex} 
+                setSelectedImageIndex={setSelectedImageIndex} 
+                imagesLength={images.length}
+            />
+
           <LargeImage
             src={images[selectedImageIndex].urls.regular}
             alt={images[selectedImageIndex].alt_description}
+            selectedImageIndex={selectedImageIndex}
+            setSelectedImageIndex={setSelectedImageIndex}
+            imagesLength={images.length}
           />
+          </div> 
         )}
+
       </section>
     </>
   );
