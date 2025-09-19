@@ -14,7 +14,6 @@ export default function ThumbnailImages({ images, onSelectImage }) {
           src={image.urls.thumb}
           alt={image.alt_description}
           onClick={() => handleClick(index)}
-          className="thumbnail-item"
         />
       ))}
     </div>
