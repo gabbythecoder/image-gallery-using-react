@@ -7,15 +7,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1300px;
+    max-width: 1200px;
     padding: 0 1rem;
     margin: 0 auto;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .side-buttons button {
+    pointer-events: auto;
+    background: none;
+    border: none;
     cursor: pointer;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: #4F577A;
+    transition: color 0.2s ease;
 }
 
 .side-buttons button:hover {

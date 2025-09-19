@@ -1,31 +1,22 @@
-.header {
-    margin-bottom: 1rem;
+.footer {
     background-color: #6F73D2;
     height: 3.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
+    margin-top: 2rem;
 }
 
-.main-title {
+.footer-text {
     font-family: "Josefin Sans", sans-serif;
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 0.9rem;
     color: #000;
-    margin-left: 0.5rem;
-    padding: 0.2rem;
 }
 
 /* === media queries === */
-@media (max-width: 600px) {
-    .main-title {
-        font-size: 2rem;
-    }
-}
-
 @media (max-width: 320px) {
-    .main-title {
-        font-size: 1.8rem;
+    .footer-text {
+        font-size: 0.6rem;
     }
 }

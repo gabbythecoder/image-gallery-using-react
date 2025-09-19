@@ -4,6 +4,8 @@ import ThumbnailImages from "./components/thumbnailimages/ThumbnailImages.jsx";
 import LargeImage from "./components/largeimage/LargeImage.jsx";
 import SearchBar from "./components/searchbar/SearchBar.jsx";
 import SideButtons from "./components/sidebuttons/SideButtons.jsx";
+import Header from "./components/header/Header.jsx";
+import Footer from "./components/footer/Footer.jsx";
 
 export default function App() {
   const [images, setImages] = useState([]);
@@ -51,7 +53,7 @@ export default function App() {
 
   return (
     <>
-      <h1 className="main-title">Gallery</h1>
+      <Header />
 
       <section>
         <SearchBar query={query} setQuery={setQuery} />
@@ -65,11 +67,6 @@ export default function App() {
 
         {selectedImageIndex !== null && (
           <div className="image-button-container">
-        <SideButtons 
-                selectedImageIndex={selectedImageIndex} 
-                setSelectedImageIndex={setSelectedImageIndex} 
-                imagesLength={images.length}
-            />
 
           <LargeImage
             src={images[selectedImageIndex].urls.regular}
@@ -78,10 +75,19 @@ export default function App() {
             setSelectedImageIndex={setSelectedImageIndex}
             imagesLength={images.length}
           />
+
+          <SideButtons 
+                selectedImageIndex={selectedImageIndex} 
+                setSelectedImageIndex={setSelectedImageIndex} 
+                imagesLength={images.length}
+            />
+            
           </div> 
         )}
 
       </section>
+
+      <Footer />
     </>
   );
 }
