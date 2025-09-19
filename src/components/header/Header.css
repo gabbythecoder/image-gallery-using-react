@@ -11,7 +11,21 @@
 .main-title {
     font-family: "Josefin Sans", sans-serif;
     font-size: 2.5rem;
+    font-weight: bold;
     color: #000;
     margin-left: 0.5rem;
     padding: 0.2rem;
+}
+
+/* === media queries === */
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
 }
