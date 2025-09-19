@@ -22,20 +22,3 @@
     font-family: var(--font-type);
     background-color: #eee;
 }
-
-/* .submit-button {
-    border: var(--border-style);
-    border-radius: var(--border-corner);
-    font-family: var(--font-type);
-    padding: 0.1rem 0.4rem;
-    font-size: 0.9rem;
-    font-weight: bold;
-    letter-spacing: 0.04rem;
-    cursor: pointer;
-    background-color: #e0e0e0;
-}
-
-.submit-button:hover {
-    background-color: #c7c7c7;
-} */
-
