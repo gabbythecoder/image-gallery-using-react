@@ -1,0 +1,28 @@
+.side-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1300px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.side-buttons button {
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #4F577A;
+}
+
+.side-buttons button:hover {
+    color: #0117E3;
+}
+
+.side-buttons button:disabled {
+    cursor: not-allowed;
+    color: #7681B3;
+}
