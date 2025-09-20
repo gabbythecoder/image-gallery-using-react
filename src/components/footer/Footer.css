@@ -1,6 +1,6 @@
 .footer {
     background-color: #6F73D2;
-    height: 3.5rem;
+    height: 3.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,8 @@
 }
 
 .footer-text {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: bold;
     font-size: 0.9rem;
     color: #000;
 }
