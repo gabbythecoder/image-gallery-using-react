@@ -53,15 +53,21 @@ export default function App() {
 
   return (
     <>
+      <div className="flex flex-col min-h-screen">
+
       <Header />
 
-      <section>
-        <SearchBar query={query} setQuery={setQuery} />
-      </section>
+      <main className="flex-1">
 
-      <section>
-        <ThumbnailImages images={images} onSelectImage={handleSwitchImage} />
-      </section>
+      <div className="flex flex-col gap-[0.5rem]">
+        <section>
+          <SearchBar query={query} setQuery={setQuery} />
+        </section>
+
+        <section>
+          <ThumbnailImages images={images} onSelectImage={handleSwitchImage} />
+        </section>
+      </div>
 
       <section>
 
@@ -71,9 +77,6 @@ export default function App() {
           <LargeImage
             src={images[selectedImageIndex].urls.regular}
             alt={images[selectedImageIndex].alt_description}
-            selectedImageIndex={selectedImageIndex}
-            setSelectedImageIndex={setSelectedImageIndex}
-            imagesLength={images.length}
           />
 
           <SideButtons 
@@ -81,13 +84,16 @@ export default function App() {
                 setSelectedImageIndex={setSelectedImageIndex} 
                 imagesLength={images.length}
             />
-            
+
           </div> 
         )}
 
       </section>
 
+      </main>
+
       <Footer />
+      </div>
     </>
   );
 }
