@@ -43,8 +43,13 @@
 }
 
 @media (max-width: 600px) {
+    .side-buttons {
+        padding: 0 0.5rem;
+    }
+
     .side-buttons button {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
+        padding: 0.2rem;
     }
 }
 
